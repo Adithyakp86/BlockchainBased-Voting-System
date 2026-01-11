@@ -1,0 +1,52 @@
+.form {
+  width: fit-content;
+  margin: 5px;
+  padding: 7px;
+  margin-right: auto;
+  margin-left: auto;
+  overflow: auto;
+}
+.input-ac {
+  margin: 0.5em;
+  margin-left: 0;
+  padding: 1em;
+  display: block;
+  width: 333px;
+}
+.label-ac {
+  display: block;
+  margin: 0.1em;
+  padding: 0.5em;
+}
+.btn-add {
+  width: 25%;
+  padding: 1em;
+  float: inline-end;
+  margin: 1em;
+}
+
+.logo-preview {
+  margin-top: 10px;
+}
+
+@media all and (max-width: 400px) {
+  .input-ac,
+  .btn-add {
+    width: 100%;
+  }
+  .btn-add {
+    float: inline-start;
+  }
+}
+
+.input-ac.is-invalid {
+  border-color: #dc3545;
+  box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.25);
+}
+
+.error-message {
+  color: #dc3545;
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+  display: block;
+}

@@ -1,0 +1,223 @@
+/* Modern Navbar Styles */
+nav {
+  display: flex;
+  height: 70px;
+  background: var(--card-bg);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border);
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  padding: 0 2rem;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+}
+
+nav .header {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.2s ease;
+}
+
+nav .header:hover {
+  transform: scale(1.05);
+  cursor: pointer;
+}
+
+nav .header i {
+  font-size: 1.75rem;
+  color: var(--primary);
+}
+
+nav .navbar-links {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav .navbar-links a {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  text-decoration: none;
+  transition: all 0.2s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+nav .navbar-links a::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: var(--gradient-primary);
+  opacity: 0.1;
+  transition: left 0.3s ease;
+}
+
+nav .navbar-links a:hover {
+  color: var(--primary);
+  background: var(--bg-secondary);
+  transform: translateY(-1px);
+}
+
+nav .navbar-links .logout-button:hover {
+  color: var(--primary);
+  background: var(--bg-secondary);
+  transform: translateY(-1px);
+}
+
+nav .navbar-links a:hover::before {
+  left: 0;
+}
+
+nav .navbar-links a i {
+  font-size: 1rem;
+}
+
+/* Logout Button Styles */
+.logout-button {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: inherit;
+  font-size: inherit;
+}
+
+.logout-button:hover {
+  color: var(--primary);
+  background: var(--bg-secondary);
+  transform: translateY(-1px);
+}
+
+.nav-active {
+  color: var(--primary) !important;
+  background: var(--bg-secondary);
+  box-shadow: 0 2px 4px 0 rgba(99, 102, 241, 0.1);
+}
+
+/* Theme Toggle Button */
+.theme-toggle {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  color: var(--text);
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.theme-toggle:hover {
+  background: var(--bg-tertiary);
+  transform: translateY(-1px);
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
+}
+
+/* Mobile Menu */
+nav .burger-menu {
+  display: none;
+  font-size: 1.5rem;
+  color: var(--text);
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  transition: all 0.2s ease;
+}
+
+nav .burger-menu:hover {
+  background: var(--bg-secondary);
+  color: var(--primary);
+}
+
+/* Mobile Responsive */
+@media all and (max-width: 768px) {
+  nav {
+    padding: 0 1rem;
+  }
+  
+  nav .burger-menu {
+    display: block;
+  }
+  
+  nav .navbar-links {
+    position: fixed;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    height: calc(100vh - 70px);
+    background: var(--card-bg);
+    backdrop-filter: blur(10px);
+    border-right: 1px solid var(--border);
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+    padding: 2rem 0;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  }
+  
+  nav .navbar-links.open {
+    transform: translateX(0);
+  }
+  
+  nav .navbar-links a {
+    padding: 1rem 2rem;
+    border-radius: 0;
+    border-bottom: 1px solid var(--border);
+    justify-content: flex-start;
+    font-size: 1.1rem;
+  }
+  
+  nav .navbar-links a:hover {
+    background: var(--bg-secondary);
+    transform: none;
+  }
+  
+  .theme-toggle {
+    margin-left: auto;
+    margin-right: 1rem;
+  }
+}
+
+/* Tablet Responsive */
+@media all and (max-width: 1024px) and (min-width: 769px) {
+  nav {
+    padding: 0 1.5rem;
+  }
+  
+  nav .navbar-links {
+    gap: 1rem;
+  }
+  
+  nav .navbar-links a {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.9rem;
+  }
+}

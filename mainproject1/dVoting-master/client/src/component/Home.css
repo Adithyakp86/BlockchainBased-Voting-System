@@ -1,0 +1,139 @@
+/* Modern Form Styles */
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.label-home {
+  display: block;
+  font-weight: 500;
+  color: var(--text);
+  margin-bottom: 0.5rem;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.input-home {
+  width: 100%;
+  padding: 0.875rem 1rem;
+  border: 2px solid var(--border);
+  border-radius: 0.5rem;
+  background: var(--card-bg);
+  color: var(--text);
+  font-size: 1rem;
+  transition: all 0.2s ease;
+  margin-bottom: 0.5rem;
+}
+
+.input-home:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+  transform: translateY(-1px);
+}
+
+.input-home::placeholder {
+  color: var(--text-muted);
+}
+
+.input-home:invalid {
+  border-color: var(--danger);
+}
+
+.input-home:valid {
+  border-color: var(--success);
+}
+
+/* Form Layout */
+.about-admin,
+.about-election {
+  background: var(--card-bg);
+  border-radius: 1rem;
+  padding: 2rem;
+  margin: 1.5rem 0;
+  box-shadow: var(--card-shadow);
+  border: 1px solid var(--border);
+}
+
+.about-admin h3,
+.about-election h3 {
+  color: var(--primary);
+  margin-bottom: 1.5rem;
+  font-size: 1.25rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.about-admin h3::before,
+.about-election h3::before {
+  content: '';
+  width: 4px;
+  height: 1.5rem;
+  background: var(--primary);
+  border-radius: 2px;
+}
+
+/* Form Grid */
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.form-row {
+  display: flex;
+  gap: 1rem;
+}
+
+.form-row .input-home {
+  flex: 1;
+}
+
+/* Error Messages */
+.error-message {
+  color: var(--danger);
+  font-size: 0.75rem;
+  margin-top: 0.25rem;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.error-message::before {
+  content: '⚠';
+  font-size: 0.875rem;
+}
+
+/* Success Messages */
+.success-message {
+  color: var(--success);
+  font-size: 0.75rem;
+  margin-top: 0.25rem;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.success-message::before {
+  content: '✓';
+  font-size: 0.875rem;
+}
+
+/* Responsive Form */
+@media (max-width: 768px) {
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .form-row {
+    flex-direction: column;
+    gap: 0;
+  }
+  
+  .about-admin,
+  .about-election {
+    padding: 1.5rem;
+  }
+}
